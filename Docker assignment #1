@@ -1,0 +1,33 @@
+Docker assignment #1
+
+
+Docs.docker.com and –help are your friend
+
+Run a nginx, a mysql/mariadb, and a httpd server
+Run all of them –detached or (-d), and name then –name
+Nginx should listen on 80:80, httpd on 8080:80, and mysql/mariadb on 3306:3306
+When running mysql, use the –env option or (-e) to padd in MY_RANDOM_ROOT_PASSWORD=yes
+
+Use docker container logs on mysql to find the random password it created on startup
+
+Answers=
+
+docker container run --publish 80:80 --detach --name webhost nginx
+
+docker container run --publish 8080:80 --detach --name apache httpd
+
+docker container run --publish 3306:3306 --detach --name mariadb mariadb
+docker container run --publish 3306:3306 --detach --name mariadb -e MY_RANDOM_ROOT_PASSWORD=yes mariadb
+
+use "docker container logs mariadb" to see the logs, and find the password that was generated.
+
+2023-05-03 06:10:31+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: Ow)35@}us{d*W=~BqBmDxxO}x+qLJsSF
+
+curl localhost= ngnix
+curl localhost:8080
+
+docker container stop b49 39e b4e 3aa
+docker container rm b49 39e b4e 3aa
+
+
+
