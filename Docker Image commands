@@ -1,0 +1,32 @@
+# Container Images, Where To Find Them and How To Build Them
+
+## The Mighty Hub: Using Docker Hub Registry Images
+
+http://hub.docker.com
+
+docker image ls
+
+docker pull nginx
+
+docker pull nginx:1.11.9
+
+docker pull nginx:1.11
+
+docker pull nginx:1.11.9-alpine
+
+docker image ls
+
+## Images and Their Layers: Discover the Image Cache
+
+docker image ls
+
+docker history nginx:latest
+
+docker history mysql
+
+docker image inspect nginx
+
+## Image Tagging and Pushing to Docker Hub
+
+What is an image? = App binaries and libraries.
+also Metadata about the image and how to run the image
