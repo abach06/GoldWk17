@@ -14,3 +14,7 @@ Docker networks: CLI management
 •	Create a network: docker network create –driver
 •	Attach a network to container: docker network conncect
 •	Detach a network from contaianer: docker network disconnect
+
+Docker network ls
+Docker network create my_app_net = creates a docker network named my_app_net
+
