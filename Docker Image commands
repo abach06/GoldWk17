@@ -30,3 +30,4 @@ docker image inspect nginx
 
 What is an image? = App binaries and libraries.
 also Metadata about the image and how to run the image
+Not a complete OS
