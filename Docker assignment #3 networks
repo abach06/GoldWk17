@@ -1,0 +1,19 @@
+Assignment: DNS RR Test
+•	Know how to use -it to get shell in container
+•	Understand basics of what a linux distro is like: ubuntu and CentOS
+•	Know how to run a container
+•	Understand basics of DNS records
+•	Ever since docker engine 1.11, we can have multiple containers on. A created network respond to the same DNS address.
+•	Create a new virtual network (default bridge driver)
+•	Create two containers from elasticsearch:2 image
+•	Research and use -network-alias search when creating them to give them an additional DNS name to respond to 
+•	Run alpine nslookup search with –net to see the two containers list for the same DNS name
+•	Run centos curl -s search:9200 with –net multiple times until you see both “name” fields show
+
+docker network create Aaron
+docker container run -d --net Aaron --net-alias search elasticsearch:2
+
+#Option 2: you can replace the image name with bretfisher/httpenv (which runs on port 8888, not 9200) and get the same effect in this assignment. It's just a simple web server that returns the environment variables (including the container name to tell them apart) in HTTP
+
+docker container run --rm --net Aaron alpine nslookup search  
+docker container run --rm --net Aaron centos curl -s search:9200
